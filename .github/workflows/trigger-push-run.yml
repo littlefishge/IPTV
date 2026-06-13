@@ -1,8 +1,6 @@
-name: Trigger Generate list.m3u (push test)
+name: Trigger Generate list.m3u (manual test)
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch: {}
 
 jobs:
