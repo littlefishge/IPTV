@@ -397,45 +397,20 @@ def filter_entries(entries: list[dict[str, str]], requested_ids: set[str]) -> li
 def generate_m3u_from_entries(entries: list[dict[str, str]], epg_url: str = "https://epg.112114.xyz/pp.xml", order: list[str] | None = None) -> str:
     timestamp = get_generation_timestamp()
     output = [f"# Generated: {timestamp}\n", f"#EXTM3U x-tvg-url=\"{epg_url}\"\n"]
-    # sort by CCTV numeric order (CCTV1, CCTV2...) when possible
-    # build lookup from provided order (channels.yaml) if available
+    
+    # Build lookup maps for sorting
     order_map: dict[str, int] = {}
     if order:
         for idx, ident in enumerate(order):
             order_map[ident.upper()] = idx
 
-    def _extract_cctv_number_entry(e: dict[str, str]) -> int:
-        tvg = str(e.get("tvg-id", ""))
-        name = str(e.get("display-name", ""))
-        group = str(e.get("group-title", ""))
-        for s in (tvg, name, group):
-            m = re.search(r"cctv[^0-9]{0,3}(\d{1,2})", s, re.I)
-            if m:
-                try:
-                    return int(m.group(1))
-                except ValueError:
-                    continue
-        for s in (name, group):
-            m2 = re.search(r"\b(\d{1,2})\b", s)
-            if m2:
-                try:
-                    return int(m2.group(1))
-                except ValueError:
-                    continue
-        return 9999
-
-    def _sort_key(e: dict[str, str]) -> tuple[int, int, str]:
-        # primary: position in channels.yaml (if provided)
-        # Prefer the channel `id` (from channels.yaml) when available, then tvg-id, then display-name.
+    def _sort_key(e: dict[str, str]) -> int:
         id_key = str(e.get("id", "")).upper()
         tvg = str(e.get("tvg-id", "")).upper()
         name = str(e.get("display-name", "")).upper()
-        if order_map:
-            # try id first, then tvg-id, then display-name
-            pos = order_map.get(id_key, order_map.get(tvg, order_map.get(name, 9999)))
-        else:
-            pos = 9999
-        return (pos if pos != 9999 else _extract_cctv_number_entry(e), pos, str(e.get("display-name", "")).lower())
+        
+        # Position in YAML (Primary authority for order)
+        return order_map.get(id_key, order_map.get(tvg, order_map.get(name, 9999)))
 
     for entry in sorted(entries, key=_sort_key):
         output.append(

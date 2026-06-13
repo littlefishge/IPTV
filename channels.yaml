@@ -28,7 +28,7 @@
       tvg-id: CCTV5
       tvg-name: CCTV5
       tvg-logo: https://epg.112114.xyz/logo/cctv5.png
-      group-title: 体育/新闻
+      group-title: 央视频道
       display-name: CCTV-5 体育
     - id: CCTV6
       tvg-id: CCTV6
@@ -76,7 +76,7 @@
       tvg-id: CCTV13
       tvg-name: CCTV13
       tvg-logo: https://epg.112114.xyz/logo/cctv13.png
-      group-title: 体育/新闻
+      group-title: 央视频道
       display-name: CCTV-13 新闻
     - id: CCTV14
       tvg-id: CCTV14
@@ -94,13 +94,13 @@
       tvg-id: CCTV16
       tvg-name: CCTV16
       tvg-logo: https://epg.112114.xyz/logo/cctv16.png
-      group-title: 体育
+      group-title: 央视频道
       display-name: CCTV-16 体育
     - id: CCTV17
       tvg-id: CCTV17
       tvg-name: CCTV17
       tvg-logo: https://epg.112114.xyz/logo/cctv17.png
-      group-title: 教育
+      group-title: 央视频道
       display-name: CCTV-17 教育
     - id: CCTVPLUS
       tvg-id: CCTV5+
