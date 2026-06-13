@@ -426,9 +426,15 @@ def generate_m3u_from_entries(entries: list[dict[str, str]], epg_url: str = "htt
 
     def _sort_key(e: dict[str, str]) -> tuple[int, int, str]:
         # primary: position in channels.yaml (if provided)
+        # Prefer the channel `id` (from channels.yaml) when available, then tvg-id, then display-name.
+        id_key = str(e.get("id", "")).upper()
         tvg = str(e.get("tvg-id", "")).upper()
         name = str(e.get("display-name", "")).upper()
-        pos = order_map.get(tvg, order_map.get(name, 9999)) if order_map else 9999
+        if order_map:
+            # try id first, then tvg-id, then display-name
+            pos = order_map.get(id_key, order_map.get(tvg, order_map.get(name, 9999)))
+        else:
+            pos = 9999
         return (pos if pos != 9999 else _extract_cctv_number_entry(e), pos, str(e.get("display-name", "")).lower())
 
     for entry in sorted(entries, key=_sort_key):
