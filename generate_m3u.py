@@ -548,12 +548,14 @@ def main() -> None:
             direct_urls = [u for u in ch.get("urls", []) if str(u).strip()]
 
             # 1) try primary source (IPTV_ORG_CHINA_PLAYLIST by default)
+            source_label = ""
             if primary_entries:
                 cand = _find_best_match(primary_entries, ch)
                 if cand:
                     ok, msg = check_url(cand.get("url", ""))
                     if ok:
                         chosen = _merge_source_metadata(ch, cand)
+                        source_label = "Primary"
                     else:
                         primary_failure = msg
                 else:
@@ -568,6 +570,7 @@ def main() -> None:
                     ok, msg = check_url(cand.get("url", ""))
                     if ok:
                         chosen = _merge_source_metadata(ch, cand)
+                        source_label = "Fallback"
                     else:
                         fallback_failure = msg
                 else:
@@ -580,12 +583,14 @@ def main() -> None:
                     ok, msg = check_url(direct_url)
                     if ok:
                         chosen = {**ch, "url": direct_url}
+                        source_label = "Direct"
                         break
                     direct_url_failure = f"direct url invalid ({msg})"
 
+            display_name = ch.get("display-name", channel_id)
             if chosen:
                 available_entries.append(chosen)
-                available_ids.append(str(channel_id))
+                available_ids.append(f"{display_name} | {source_label}")
             else:
                 failure_desc = ""
                 if primary_failure and fallback_failure:
@@ -600,7 +605,7 @@ def main() -> None:
                     failure_desc = direct_url_failure
                 else:
                     failure_desc = "not found in any source"
-                failed_ids.append(f"{channel_id} ({failure_desc})")
+                failed_ids.append(f"{display_name} ({failure_desc})")
 
         write_logs(available_ids, failed_ids)
         if available_ids:
