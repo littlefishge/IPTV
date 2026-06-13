@@ -1,9 +1,11 @@
-name: Generate list.m3u
+name: Generate list.m3u (Daily / Manual / Push)
 
 on:
   schedule:
     - cron: '0 17 * * *'  # 每天 UTC+8 01:00 运行一次
   workflow_dispatch: {}
+  push:
+    branches: [ main ]
 
 permissions:
   contents: write
