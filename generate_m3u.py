@@ -548,9 +548,20 @@ def main() -> None:
             channel_id = ch.get("tvg-id", ch.get("display-name", ch.get("id", "unknown")))
             direct_urls = [u for u in ch.get("urls", []) if str(u).strip()]
 
-            # 1) try primary source (IPTV_ORG_CHINA_PLAYLIST by default)
+            # 1) try direct override URL from channels.yaml first
             source_label = ""
-            if primary_entries:
+            if chosen is None:
+                for direct_url in direct_urls:
+                    direct_url = str(direct_url).strip()
+                    ok, msg = check_url(direct_url)
+                    if ok:
+                        chosen = {**ch, "url": direct_url}
+                        source_label = "Direct"
+                        break
+                    direct_url_failure = f"direct url invalid ({msg})"
+
+            # 2) try primary source (IPTV_ORG_CHINA_PLAYLIST by default) if direct failed
+            if chosen is None and primary_entries:
                 cand = _find_best_match(primary_entries, ch)
                 if cand:
                     ok, msg = check_url(cand.get("url", ""))
@@ -561,10 +572,10 @@ def main() -> None:
                         primary_failure = msg
                 else:
                     primary_failure = "not found in primary"
-            else:
+            elif chosen is None:
                 primary_failure = "primary source unavailable"
 
-            # 2) try fallback source if primary failed
+            # 3) try fallback source if primary and direct failed
             if chosen is None and fallback_entries:
                 cand = _find_best_match(fallback_entries, ch)
                 if cand:
@@ -576,17 +587,6 @@ def main() -> None:
                         fallback_failure = msg
                 else:
                     fallback_failure = "not found in fallback"
-
-            # 3) try direct override URL from channels.yaml last
-            if chosen is None:
-                for direct_url in direct_urls:
-                    direct_url = str(direct_url).strip()
-                    ok, msg = check_url(direct_url)
-                    if ok:
-                        chosen = {**ch, "url": direct_url}
-                        source_label = "Direct"
-                        break
-                    direct_url_failure = f"direct url invalid ({msg})"
 
             display_name = ch.get("display-name", channel_id)
             if chosen:
