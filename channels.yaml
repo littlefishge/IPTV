@@ -103,26 +103,32 @@
       group-title: 教育
       display-name: CCTV-17 教育
     - id: CCTVPLUS
-      tvg-id: CCTV+
+      tvg-id: CCTV5+
       tvg-name: CCTV+
       tvg-logo: https://epg.112114.xyz/logo/cctvplus.png
       group-title: 央视频道
-      display-name: CCTV+ 特色频道
+      display-name: CCTV+
     - id: CCTV-GOLF-TENNIS
-      tvg-id: CCTV-Golf&Tennis
-      tvg-name: CCTV-Golf&Tennis
+      tvg-id: CCTV5+-体育赛事
+      tvg-name: CCTV5+-体育赛事
       tvg-logo: https://epg.112114.xyz/logo/cctvgolfandtennis.png
       group-title: 央视频道
-      display-name: CCTV-Golf&Tennis
+      display-name: CCTV-Golf & Tennis
     - id: CCTVHEALTH
-      tvg-id: CCTV-Health
-      tvg-name: CCTV-Health
+      tvg-id: 卫生健康
+      tvg-name: 卫生健康
       tvg-logo: https://epg.112114.xyz/logo/cctvhealth.png
       group-title: 央视频道
       display-name: CCTV-Health
     - id: CCTVSTORM
-      tvg-id: CCTV-Storm
-      tvg-name: CCTV-Storm
+      tvg-id: CCTV风云剧场
+      tvg-name: CCTV风云剧场
       tvg-logo: https://epg.112114.xyz/logo/cctvstorm.png
       group-title: 央视频道
-      display-name: CCTV-Storm
+      display-name: CCTV-Storm Theater
+    - id: CCTV4K
+      tvg-id: CCTV4K
+      tvg-name: CCTV4K
+      tvg-logo: https://epg.112114.xyz/logo/cctv4k.png
+      group-title: 央视频道
+      display-name: CCTV4K
