@@ -37,9 +37,9 @@ jobs:
       - name: Commit and push updated list.m3u and logs
         uses: EndBug/add-and-commit@v9
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           message: "${{ env.COMMIT_MESSAGE }}"
           add: "list.m3u log/info log/error"
           author_name: "github-actions[bot]"
           author_email: "41898282+github-actions[bot]@users.noreply.github.com"
           push: true
-          signoff: false
