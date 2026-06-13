@@ -18,11 +18,12 @@ except ImportError:
 
 IPTV_ORG_CHINA_PLAYLIST = "https://iptv-org.github.io/iptv/countries/cn.m3u"
 
-FANMINGMING_BASE = "https://live.fanmingming.com/tv"
+# Updated functional fallback source
+FALLBACK_M3U_URL = "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%9B%BD%E5%86%85%E7%94%B5%E8%A7%86%E5%8F%B0202509.m3u"
 
 
 def build_url(channel_id: str, source_base: str) -> str:
-    if source_base.endswith(".m3u8"):
+    if source_base.endswith((".m3u8", ".m3u")):
         return source_base
     return f"{source_base.rstrip('/')}/{channel_id}.m3u8"
 
@@ -98,10 +99,10 @@ def parse_args() -> argparse.Namespace:
         "--source",
         "--fallback-source",
         dest="fallback_source",
-        default=FANMINGMING_BASE,
+        default=FALLBACK_M3U_URL,
         help=(
             "Fallback playlist source used when the primary source does not provide a working stream. "
-            "Defaults to the FanMingMing base URL; can also be a playlist URL or a source template like 'iptv-org'."
+            "Defaults to the fallback M3U playlist URL."
         ),
     )
     parser.add_argument(
@@ -619,7 +620,7 @@ def main() -> None:
         save_file(Path(args.output), generated)
         return
     else:
-        source_base = FANMINGMING_BASE if args.source == "fanmingming" else args.source
+        source_base = FALLBACK_M3U_URL if args.source == "fanmingming" else args.source
         source_channels = channels_list
         selected_channels = [
             ch for ch in source_channels if ch["id"].upper() in requested
