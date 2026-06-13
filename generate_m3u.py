@@ -548,19 +548,27 @@ def main() -> None:
             channel_id = ch.get("tvg-id", ch.get("display-name", ch.get("id", "unknown")))
             direct_urls = [u for u in ch.get("urls", []) if str(u).strip()]
 
-            # 1) try direct override URL from channels.yaml first
-            source_label = ""
-            if chosen is None:
-                for direct_url in direct_urls:
-                    direct_url = str(direct_url).strip()
-                    ok, msg = check_url(direct_url)
-                    if ok:
-                        chosen = {**ch, "url": direct_url}
-                        source_label = "Direct"
-                        break
-                    direct_url_failure = f"direct url invalid ({msg})"
+            # 1) try direct override URLs from channels.yaml first
+            found_direct = False
+            display_name = ch.get("display-name", channel_id)
+            for idx, direct_url in enumerate(direct_urls):
+                direct_url = str(direct_url).strip()
+                ok, msg = check_url(direct_url)
+                if ok:
+                    available_entries.append({**ch, "url": direct_url})
+                    label = f"{display_name} | Direct"
+                    if len(direct_urls) > 1:
+                        label += f" {idx+1}"
+                    available_ids.append(label)
+                    found_direct = True
+                else:
+                    direct_url_failure = f"direct url {idx+1} invalid ({msg})"
+
+            if found_direct:
+                continue
 
             # 2) try primary source (IPTV_ORG_CHINA_PLAYLIST by default) if direct failed
+            source_label = ""
             if chosen is None and primary_entries:
                 cand = _find_best_match(primary_entries, ch)
                 if cand:
@@ -588,7 +596,6 @@ def main() -> None:
                 else:
                     fallback_failure = "not found in fallback"
 
-            display_name = ch.get("display-name", channel_id)
             if chosen:
                 available_entries.append(chosen)
                 available_ids.append(f"{display_name} | {source_label}")
