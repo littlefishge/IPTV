@@ -1,0 +1,129 @@
+- category: 央视
+  channels:
+    - id: CCTV1
+      tvg-id: CCTV1
+      tvg-name: CCTV1
+      tvg-logo: https://epg.112114.xyz/logo/cctv1.png
+      group-title: 央视频道
+      display-name: CCTV-1 综合
+    - id: CCTV2
+      tvg-id: CCTV2
+      tvg-name: CCTV2
+      tvg-logo: https://epg.112114.xyz/logo/cctv2.png
+      group-title: 央视频道
+      display-name: CCTV-2 财经
+    - id: CCTV3
+      tvg-id: CCTV3
+      tvg-name: CCTV3
+      tvg-logo: https://epg.112114.xyz/logo/cctv3.png
+      group-title: 央视频道
+      display-name: CCTV-3 综艺
+    - id: CCTV4
+      tvg-id: CCTV4
+      tvg-name: CCTV4
+      tvg-logo: https://epg.112114.xyz/logo/cctv4.png
+      group-title: 央视频道
+      display-name: CCTV-4 中文国际
+    - id: CCTV5
+      tvg-id: CCTV5
+      tvg-name: CCTV5
+      tvg-logo: https://epg.112114.xyz/logo/cctv5.png
+      group-title: 体育/新闻
+      display-name: CCTV-5 体育
+      urls:
+    - id: CCTV6
+      tvg-id: CCTV6
+      tvg-name: CCTV6
+      tvg-logo: https://epg.112114.xyz/logo/cctv6.png
+      group-title: 央视频道
+      display-name: CCTV-6 电影
+    - id: CCTV7
+      tvg-id: CCTV7
+      tvg-name: CCTV7
+      tvg-logo: https://epg.112114.xyz/logo/cctv7.png
+      group-title: 央视频道
+      display-name: CCTV-7 军事·农业
+    - id: CCTV8
+      tvg-id: CCTV8
+      tvg-name: CCTV8
+      tvg-logo: https://epg.112114.xyz/logo/cctv8.png
+      group-title: 央视频道
+      display-name: CCTV-8 电视剧
+    - id: CCTV9
+      tvg-id: CCTV9
+      tvg-name: CCTV9
+      tvg-logo: https://epg.112114.xyz/logo/cctv9.png
+      group-title: 央视频道
+      display-name: CCTV-9 纪录
+    - id: CCTV10
+      tvg-id: CCTV10
+      tvg-name: CCTV10
+      tvg-logo: https://epg.112114.xyz/logo/cctv10.png
+      group-title: 央视频道
+      display-name: CCTV-10 科教
+    - id: CCTV11
+      tvg-id: CCTV11
+      tvg-name: CCTV11
+      tvg-logo: https://epg.112114.xyz/logo/cctv11.png
+      group-title: 央视频道
+      display-name: CCTV-11 戏曲
+    - id: CCTV12
+      tvg-id: CCTV12
+      tvg-name: CCTV12
+      tvg-logo: https://epg.112114.xyz/logo/cctv12.png
+      group-title: 央视频道
+      display-name: CCTV-12 社会与法
+    - id: CCTV13
+      tvg-id: CCTV13
+      tvg-name: CCTV13
+      tvg-logo: https://epg.112114.xyz/logo/cctv13.png
+      group-title: 体育/新闻
+      display-name: CCTV-13 新闻
+    - id: CCTV14
+      tvg-id: CCTV14
+      tvg-name: CCTV14
+      tvg-logo: https://epg.112114.xyz/logo/cctv14.png
+      group-title: 央视频道
+      display-name: CCTV-14 少儿
+    - id: CCTV15
+      tvg-id: CCTV15
+      tvg-name: CCTV15
+      tvg-logo: https://epg.112114.xyz/logo/cctv15.png
+      group-title: 央视频道
+      display-name: CCTV-15 音乐
+    - id: CCTV16
+      tvg-id: CCTV16
+      tvg-name: CCTV16
+      tvg-logo: https://epg.112114.xyz/logo/cctv16.png
+      group-title: 体育
+      display-name: CCTV-16 体育
+    - id: CCTV17
+      tvg-id: CCTV17
+      tvg-name: CCTV17
+      tvg-logo: https://epg.112114.xyz/logo/cctv17.png
+      group-title: 教育
+      display-name: CCTV-17 教育
+    - id: CCTVPLUS
+      tvg-id: CCTV+
+      tvg-name: CCTV+
+      tvg-logo: https://epg.112114.xyz/logo/cctvplus.png
+      group-title: 央视频道
+      display-name: CCTV+ 特色频道
+    - id: CCTV-GOLF-TENNIS
+      tvg-id: CCTV-Golf&Tennis
+      tvg-name: CCTV-Golf&Tennis
+      tvg-logo: https://epg.112114.xyz/logo/cctvgolfandtennis.png
+      group-title: 央视频道
+      display-name: CCTV-Golf&Tennis
+    - id: CCTVHEALTH
+      tvg-id: CCTV-Health
+      tvg-name: CCTV-Health
+      tvg-logo: https://epg.112114.xyz/logo/cctvhealth.png
+      group-title: 央视频道
+      display-name: CCTV-Health
+    - id: CCTVSTORM
+      tvg-id: CCTV-Storm
+      tvg-name: CCTV-Storm
+      tvg-logo: https://epg.112114.xyz/logo/cctvstorm.png
+      group-title: 央视频道
+      display-name: CCTV-Storm
