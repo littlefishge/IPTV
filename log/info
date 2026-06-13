@@ -1,8 +1,8 @@
-# Generated: 2026-06-13 23:17:38 UTC+8
+# Generated: 2026-06-13 23:19:04 UTC+8
 CCTV-1 综合 | Primary
 CCTV-2 财经 | Primary
 CCTV-3 综艺 | Primary
-CCTV-4 中文国际 | Fallback
+CCTV-4 中文国际 | Direct
 CCTV-5 体育 | Direct
 CCTV-6 电影 | Primary
 CCTV-7 军事·农业 | Primary
