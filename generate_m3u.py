@@ -353,6 +353,21 @@ def _find_best_match(entries: list[dict[str, str]], channel: dict[str, str]) -> 
     return max(matches, key=_prefers_hd)
 
 
+def _merge_source_metadata(channel: dict[str, str], source_entry: dict[str, str]) -> dict[str, str]:
+    merged = channel.copy()
+    merged["url"] = source_entry.get("url", merged.get("url", ""))
+    merged["urls"] = source_entry.get("urls", merged.get("urls", []))
+    if not merged.get("tvg-logo") and source_entry.get("tvg-logo"):
+        merged["tvg-logo"] = source_entry["tvg-logo"]
+    if not merged.get("group-title") and source_entry.get("group-title"):
+        merged["group-title"] = source_entry["group-title"]
+    if not merged.get("display-name") and source_entry.get("display-name"):
+        merged["display-name"] = source_entry["display-name"]
+    if not merged.get("tvg-name") and source_entry.get("tvg-name"):
+        merged["tvg-name"] = source_entry["tvg-name"]
+    return merged
+
+
 def _find_all_matches(entries: list[dict[str, str]], channel: dict[str, str]) -> list[dict[str, str]]:
     matches = [e for e in entries if _matches_channel(e, channel)]
     return sorted(matches, key=_prefers_hd, reverse=True)
@@ -557,7 +572,7 @@ def main() -> None:
                 if cand:
                     ok, msg = check_url(cand.get("url", ""))
                     if ok:
-                        chosen = {**ch, **cand}
+                        chosen = _merge_source_metadata(ch, cand)
                     else:
                         primary_failure = msg
                 else:
@@ -571,7 +586,7 @@ def main() -> None:
                 if cand:
                     ok, msg = check_url(cand.get("url", ""))
                     if ok:
-                        chosen = {**ch, **cand}
+                        chosen = _merge_source_metadata(ch, cand)
                     else:
                         fallback_failure = msg
                 else:

@@ -30,7 +30,6 @@
       tvg-logo: https://epg.112114.xyz/logo/cctv5.png
       group-title: 体育/新闻
       display-name: CCTV-5 体育
-      urls:
     - id: CCTV6
       tvg-id: CCTV6
       tvg-name: CCTV6
