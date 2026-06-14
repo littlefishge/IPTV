@@ -1,4 +1,4 @@
-# Generated: 2026-06-14 02:08:04 UTC+8
+# Generated: 2026-06-14 19:21:22 UTC+8
 CCTV-1 综合 | Primary
 CCTV-2 财经 | Primary
 CCTV-3 综艺 | Primary
@@ -17,8 +17,9 @@ CCTV-14 少儿 | Primary
 CCTV-15 音乐 | Primary
 CCTV-16 体育 | Primary
 CCTV-17 教育 | Primary
-CCTV+ | Primary
-CCTV-Golf & Tennis | Primary
-CCTV-Health | Primary
-CCTV-Storm Theater | Primary
-CCTV4K | Primary
+CCTV-5+ 体育赛事 | Fallback
+CCTV-高尔夫·网球 | Direct
+CCTV-文化精品 | Direct
+CCTV-卫生健康 | Primary
+CCTV-风云剧场 | Direct
+CCTV4K 超高清 | Primary

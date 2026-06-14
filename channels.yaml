@@ -107,33 +107,45 @@
       tvg-logo: https://epg.112114.xyz/logo/cctv17.png
       group-title: 央视频道
       display-name: CCTV-17 教育
-    - id: CCTVPLUS
+    - id: CCTV5PLUS
       tvg-id: CCTV5+
-      tvg-name: CCTV+
-      tvg-logo: https://epg.112114.xyz/logo/cctvplus.png
+      tvg-name: CCTV5+
+      tvg-logo: https://epg.112114.xyz/logo/cctv5plus.png
       group-title: 央视频道
-      display-name: CCTV+
+      display-name: CCTV-5+ 体育赛事
     - id: CCTV-GOLF-TENNIS
       tvg-id: CCTV5+-体育赛事
       tvg-name: CCTV5+-体育赛事
-      tvg-logo: https://epg.112114.xyz/logo/cctvgolfandtennis.png
+      tvg-logo: https://i.imgur.com/iqJJTmH.png
       group-title: 央视频道
-      display-name: CCTV-Golf & Tennis
+      display-name: CCTV-高尔夫·网球
+      urls:
+        - http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub
+    - id: CCTV-PREMIER
+      tvg-id: CCTV文化精品
+      tvg-name: CCTV文化精品
+      tvg-logo: https://epg.112114.xyz/logo/ysjp.png
+      group-title: 央视频道
+      display-name: CCTV-文化精品
+      urls:
+        - http://38.75.136.137:98/gslb/dsdqpub/ysjp.m3u8?auth=testpub
     - id: CCTVHEALTH
       tvg-id: 卫生健康
       tvg-name: 卫生健康
       tvg-logo: https://epg.112114.xyz/logo/cctvhealth.png
       group-title: 央视频道
-      display-name: CCTV-Health
+      display-name: CCTV-卫生健康
     - id: CCTVSTORM
       tvg-id: CCTV风云剧场
       tvg-name: CCTV风云剧场
-      tvg-logo: https://epg.112114.xyz/logo/cctvstorm.png
+      tvg-logo: https://epg.112114.xyz/logo/fyjc.png
       group-title: 央视频道
-      display-name: CCTV-Storm Theater
+      display-name: CCTV-风云剧场
+      urls:
+        - http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub
     - id: CCTV4K
       tvg-id: CCTV4K
       tvg-name: CCTV4K
       tvg-logo: https://epg.112114.xyz/logo/cctv4k.png
       group-title: 央视频道
-      display-name: CCTV4K
+      display-name: CCTV4K 超高清
