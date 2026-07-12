@@ -1,9 +1,9 @@
-# Generated: 2026-07-12 01:54:25 UTC+8
+# Generated: 2026-07-12 12:50:00 UTC+8
 
 #EXTM3U x-tvg-url="https://epg.112114.xyz/pp.xml"
 
 #EXTINF:-1 tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.112114.xyz/logo/cctv1.png" group-title="央视频道",CCTV-1 综合
-http://69.30.245.50/live/cctv1.m3u8
+http://112.46.105.20:8009/hls/501/index.m3u8
 
 #EXTINF:-1 tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="https://epg.112114.xyz/logo/cctv2.png" group-title="央视频道",CCTV-2 财经
 http://74.91.26.218:82/live/cctv2hd.m3u8
