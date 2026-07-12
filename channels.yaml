@@ -7,7 +7,7 @@
       group-title: 央视频道
       display-name: CCTV-1 综合
       urls:
-        - http://112.46.105.20:8009/hls/501/index.m3u8
+        - http://38.75.136.137:98/gslb/dsdqpub/cctv1hd.m3u8?auth=testpub
     - id: CCTV2
       tvg-id: CCTV2
       tvg-name: CCTV2
