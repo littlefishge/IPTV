@@ -1,4 +1,4 @@
-# Generated: 2026-10-21 04:17:51 UTC+8
+# Generated: 2026-10-22 04:27:00 UTC+8
 CCTV-1 综合 | Direct
 CCTV-2 财经 | Primary
 CCTV-3 综艺 | Primary
@@ -13,7 +13,7 @@ CCTV-11 戏曲 | Primary
 CCTV-12 社会与法 | Primary
 CCTV-13 新闻 | Primary
 CCTV-14 少儿 | Primary
-CCTV-15 音乐 | Fallback
+CCTV-15 音乐 | Primary
 CCTV-16 体育 | Direct
 CCTV-17 教育 | Primary
 CCTV-5+ 体育赛事 | Direct
